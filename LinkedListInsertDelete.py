@@ -7,6 +7,7 @@ ADT for Linked List are
 -insert new element at the head of linked list
 -check if a value exist in linked list
 -deletes the node from the head
+-deletes the node from desired index
 """
 
 """
