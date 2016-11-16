@@ -18,7 +18,7 @@ Args:
 Returns:
     object for the Node
 """
-class Node(object):
+class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -121,11 +121,28 @@ class LinkedList(object):
                 counter += 1
                 current = current.next
 
+    """delete the head node from the linked list"""
     def deleteFromHead(self):
         current = self.head
         self.head = current.next
+        current.next = None
 
+    def deleteFromIndex(self, index):
+        current = self.head
 
+        if index + 1 <= self.getLength():
+            if index == 0:
+                self.deleteFromHead()
+            else:
+                counter = 1
+                while current:
+                    if counter == index:
+                        nodeToBeRemoved = current.next
+                        current.next = nodeToBeRemoved.next
+                        nodeToBeRemoved = None
+
+                    counter += 1
+                    current = current.next
 
 """Creating new nodes for the linked list"""
 node1 = Node('a')
@@ -143,6 +160,7 @@ linkedList.append(node3)
 linkedList.printLinkedList()
 
 """print the length of linked list"""
+print "length of linked list is"
 print linkedList.getLength()
 
 """insert new node from the head"""
@@ -152,10 +170,17 @@ linkedList.printLinkedList()
 """search value at index if it exist else return -1"""
 print "searched value at index: " + str(linkedList.searchValue('c'))
 
-"""inserts new node at desired index"""
-linkedList.insertAtIndex(4, node5)
+"""insert new node at desired index"""
+print "inserts new node at index 4"
+linkedList.insertAtIndex(2, node5)
 linkedList.printLinkedList()
 
-"""deletes the node from the head"""
+"""delete the node from the head"""
+print "delete head node"
 linkedList.deleteFromHead()
+linkedList.printLinkedList()
+
+"""delete the node at desired index"""
+print "delete the node at index 2"
+linkedList.deleteFromIndex(2)
 linkedList.printLinkedList()
