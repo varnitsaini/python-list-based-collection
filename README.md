@@ -1,5 +1,5 @@
 # python-list-based-collection
-This repository consist of programs related to list based collections written in python language
+This repository consist of programs related to list based collection data structure written in python language
 
 ### Following are the list based programs in this repository  ###
 * Linked List Insertion And Deletion
@@ -10,3 +10,5 @@ This repository consist of programs related to list based collections written in
 * Print Middle element of Linked List
 * Reversing A Linked List
 * Inserting In Sorted List
+* Check Palindrome in Linked List
+* Get the intersection point of two Linked List
